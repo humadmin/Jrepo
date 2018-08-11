@@ -1,0 +1,40 @@
+---
+  - name: Configure Web server
+    hosts: all
+    vars:
+      rule: http
+    tasks:
+      - name: include varible form yml file
+        include_vars: vars/variables.yml
+
+      - name: Include the invironment file and wet the variables
+        include: tasks/environment.yml
+        vars:
+          package: httpd
+          service: httpd
+          svs_state: started
+
+      - name: install the firewall
+        yum:
+          name: "{{ firewall_pkg }}"
+          state: latest
+
+      - name: start firewalld
+        service:
+          name: firewalld
+          state: started
+          enabled: true
+
+      - name: open the port for {{ rule }}
+        firewalld:
+          service: "{{ rule }}"
+          immediate: true
+          permanent: true
+          state: enabled 
+      - name: Create index.htmp
+        copy:
+          content: "{{ ansible_fqdn }} has been customized using Ansible on the {{ ansible_date_time.date }} \n"
+          dest: /var/www/html/index.html                
+
+
+

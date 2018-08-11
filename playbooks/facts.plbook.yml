@@ -1,0 +1,14 @@
+---
+- name: install apache amd start
+  hosts: centos 
+  become: yes
+  tasks:
+    - name: Install required packages
+      yum:
+        name: "{{ ansible_local.custom.general.package }}"
+        state: latest
+
+    - name: start service  
+      service:
+        name: "{{ ansible_local.custom.general.service }}"
+        state: "{{ ansible_local.custom.general.state }}"

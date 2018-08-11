@@ -1,0 +1,20 @@
+---
+- name: install remove facts
+  hosts: centos
+  become: yes
+  vars:
+    remote_dir: /etc/ansible/facts.d
+    facts_file: custom.fact
+    
+  tasks:
+    - name: create remote directory 
+      file:
+        state: directory
+        recurse: yes
+        path: "{{ remote_dir }}"
+
+    - name: install the new facts
+      copy:
+        src: "{{ facts_file }}"
+        dest: "{{ remote_dir }}"
+

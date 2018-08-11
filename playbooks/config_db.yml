@@ -1,0 +1,19 @@
+---
+  - yum:
+      name: "{{ extra package }}"
+
+  - get_url:
+      url: "https://mariadb.com/kb/en/library/configuring-mariadb-with-mycnf/#example-of-configuration-file"
+      dest: "{{ configure_database_path }}"
+      owner: mysql
+      group: mysql
+      mode: 0644
+      seyer: system_u
+      setype: mysqld_etc_t
+      force: yes
+
+  - service:
+      name: "{{ db_service }}"
+      state: started
+      enabled: true 
+

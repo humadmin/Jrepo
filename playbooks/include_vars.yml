@@ -1,0 +1,12 @@
+---
+- name: Instlal and web app pkg
+  hosts: centos
+  tasks:
+    - name: include task file and define the var
+      include_vars: var.yml
+
+    - name: debug the variable
+      debug:
+        msg: >
+          "{{ packages['web'] }} and {{ packages.db }}
+          have been imported "
