@@ -1,9 +1,0 @@
-[packages]
-db_packages = mariadb-server
-web_packages = httpd 
-
-[services]
-db_services = mariadb
-web_services = httpd
-
-

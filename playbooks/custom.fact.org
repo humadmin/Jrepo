@@ -1,9 +1,0 @@
-[general]
-package = firewalld
-service = firewalld 
-state = started
-
-package = httpd
-service = httpd
-state = started
-
