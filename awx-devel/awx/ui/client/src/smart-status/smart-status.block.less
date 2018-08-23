@@ -1,0 +1,86 @@
+/** @define SmartStatus */
+
+.SmartStatus-container{
+    max-width: 165px;
+    display:flex;
+}
+
+.SmartStatus-iconContainer{
+    padding: 2px;
+    flex: 0 1 auto;
+}
+
+.SmartStatus-icon {
+    width: 16px;
+    height: 16px;
+
+}
+
+.SmartStatus-iconDirectionPlaceholder {
+    width: 16px;
+    height: 8px;
+    border: 1px solid #d7d7d7;
+    background: #f2f2f2;
+}
+
+.SmartStatus-iconDirectionPlaceholder--bottom {
+    border-bottom: 0;
+}
+
+.SmartStatus-iconDirectionPlaceholder--top {
+    border-top: 0;
+}
+
+.SmartStatus-iconIndicator {
+    width: 16px;
+    height: 8px;
+}
+
+.SmartStatus-iconIndicator--success {
+    background: #5cb85c;
+}
+
+.SmartStatus-iconIndicator--failed {
+    background: #d9534f;
+}
+
+.SmartStatus-iconPlaceholder {
+    height: 15px;
+    width: 15px;
+    border: 1px solid #d7d7d7;
+    background: #f2f2f2;
+}
+
+
+.SmartStatus-tooltip--successful,
+.SmartStatus-tooltip--success{
+    color: @default-succ;
+    padding-right: 0px;
+    text-shadow:
+        -1px -1px 0 @default-bg,
+        1px -1px 0 @default-bg,
+        -1px 1px 0 @default-bg,
+        1px 1px 0 @default-bg;
+
+}
+
+.SmartStatus-tooltip--error, .SmartStatus-tooltip--failed{
+    color: @default-err;
+    padding-right: 0px;
+    text-shadow:
+        -1px -1px 0 @default-bg,
+        1px -1px 0 @default-bg,
+        -1px 1px 0 @default-bg,
+        1px 1px 0 @default-bg;
+}
+
+.SmartStatus-tooltip--running{
+    color: @default-data-txt;
+    padding-right: 0px;
+    text-shadow:
+        -1px -1px 0 @default-bg,
+        1px -1px 0 @default-bg,
+        -1px 1px 0 @default-bg,
+        1px 1px 0 @default-bg;
+    .pulsate();
+}

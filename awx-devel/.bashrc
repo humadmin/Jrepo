@@ -1,0 +1,1 @@
+export NODEJS_HOME=/usr/lib/nodejs/node-v6.11.3/ && export PATH=/usr/lib/nodejs/node-v6.11.3//bin:/usr/lib/nodejs/node-v6.11.3//bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin

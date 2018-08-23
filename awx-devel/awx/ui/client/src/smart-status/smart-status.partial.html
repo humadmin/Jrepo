@@ -1,0 +1,29 @@
+<div class="SmartStatus-container">
+    <div ng-repeat="job in sparkArray track by $index" class='SmartStatus-iconContainer'>
+        <a ng-href="{{job.detailsUrl}}"
+             aw-tool-tip="{{job.status_tip}}"
+             data-tip-watch="job.status_tip"
+             aw-tip-placement="left"
+             data-original-title=""
+             data-trigger="hover"
+             data-container="body"
+             tooltipInnerClass="SmartStatus-tooltip"
+             title="">
+                <div class="SmartStatus-icon">
+                    <div ng-show="job.value === -1"
+                        class="SmartStatus-iconDirectionPlaceholder SmartStatus-iconDirectionPlaceholder--bottom">
+                    </div>
+                    <div class="SmartStatus-iconIndicator"
+                        ng-class="{'SmartStatus-iconIndicator--success': job.value === 1,
+                            'SmartStatus-iconIndicator--failed': job.value === -1}">
+                    </div>
+                    <div ng-show="job.value === 1"
+                        class="SmartStatus-iconDirectionPlaceholder SmartStatus-iconDirectionPlaceholder--top">
+                    </div>
+                </div>
+        </a>
+    </div>
+    <div ng-repeat="n in placeholders track by $index" class='SmartStatus-iconContainer'>
+        <div class="SmartStatus-iconPlaceholder"></div>
+    </div>
+</div>
