@@ -1,0 +1,7 @@
+# A simple var defined near the local host in inventory file. cat the inventory file to see the defenition
+- name: Play to demo variable scope
+  hosts: local
+  tasks:
+    - name: Task1 which uses the vars
+      debug:
+        msg: "The value of var1 is {{testvar}}"

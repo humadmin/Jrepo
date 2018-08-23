@@ -1,0 +1,16 @@
+---
+- name: Play to demo the value of facts on a delegated host
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task to run a command on a delegated host.
+    shell: yum -y install httpd
+    delegate_to: serverb.lab.example.com
+
+  - name: Task to run on actual server.
+    command: hostname
+    register: oput
+    delegate_to: serverb.lab.example.com
+  - debug: var=oput
+
+  - name: Task to run on actual server.
+    command: date

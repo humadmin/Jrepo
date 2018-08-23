@@ -1,0 +1,8 @@
+---
+- name: use the role called motd
+  hosts: servera.lab.example.com serverb.lab.example.com
+  user: devops
+  become: true
+
+  roles:
+    - motd

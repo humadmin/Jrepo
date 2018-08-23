@@ -1,0 +1,12 @@
+--- 
+# Starting line of playbook
+- name: My simple variable defenition example
+  hosts: localhost 
+  remote_user: devops
+  vars:
+    user: joe
+    home: /home/joe
+  tasks:
+    - name: Task to display variable values
+      debug:
+        msg: "Variable user is {{ user }} and home is {{home}}"

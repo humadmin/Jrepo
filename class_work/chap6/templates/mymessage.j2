@@ -1,0 +1,5 @@
+# This file is managed via jinja2 templating.
+# File a bugzilla ticket on APP queue, if more params are needed in it.
+
+APP_IP = {{ ansible_default_ipv4.address }}
+APP_HOSTNAME = {{ ansible_fqdn }}

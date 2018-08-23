@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Copy the config file1
+    copy:
+      src: /tmp/myapp1.conf
+      dest: /etc/myapp1.conf
+      owner: student
+      mode: 0644
+    ignore_errors: yes
+  
+  - name: Copy the config file2
+    copy:
+      src: /tmp/myapp2.conf
+      dest: /etc/myapp2.conf
+      owner: student
+      mode: 0644
+    ignore_errors: yes

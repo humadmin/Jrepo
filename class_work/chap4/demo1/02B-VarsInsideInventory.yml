@@ -1,0 +1,22 @@
+### This script demonstrates the over ruling of variable values. var1 first has local defenition, then it has value from task section, 
+#   ie overrides the base defenition. Uncomment and demonstate when we include a file , var1 value changes and finally comment the include section
+#   to see that the last local value comes bacl. 
+- name: Play to demo variable scope
+  hosts: local
+  vars:
+    var1: This_is_var1_from_vars_def_section_in_PLAYBOOKFILE
+    incl_var: variables/01-VariableDefs.yml
+  tasks:
+    - name: Task1 which uses the default value of var1
+      debug:
+        msg: "The default value of var1 is {{var1}}"
+    - name: Task2 which overrides the base value of var1
+      vars:
+        var1: Here_I_OVEERIDE_YOU_MR_VAR1
+      debug:
+        msg: "The new value of var1 is {{var1}}"
+    - name: Task to include the variable file "{{incl_var}}"
+      include_vars: "{{incl_var}}"
+    - name: Task which uses the vars to show overrding
+      debug:
+        msg: "The value of var1 is {{var1}}"

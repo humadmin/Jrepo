@@ -1,0 +1,42 @@
+2018-02-08 09:47:11,078 p=8813 u=root |  PLAY [servera.lab.example.com] ***********************************************************
+2018-02-08 09:47:11,123 p=8813 u=root |  TASK [Gathering Facts] *******************************************************************
+2018-02-08 09:47:12,074 p=8813 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:12,078 p=8813 u=root |  TASK [Install  httpd service...Check the 2 notify statement here.One to enable firewall and 2nd to start the httpd service] ***
+2018-02-08 09:47:13,120 p=8813 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:13,123 p=8813 u=root |  TASK [Create the html website folder on servera, and copy the pre-configured config file.] ***
+2018-02-08 09:47:13,551 p=8813 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:13,555 p=8813 u=root |  TASK [Copy the index.html file to the document root of the website] **********************
+2018-02-08 09:47:14,295 p=8813 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:14,298 p=8813 u=root |  TASK [Copy the new website config file] **************************************************
+2018-02-08 09:47:14,890 p=8813 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:14,894 p=8813 u=root |  TASK [Change the hosts file] *************************************************************
+2018-02-08 09:47:15,315 p=8813 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:15,320 p=8813 u=root |  PLAY [localhost] *************************************************************************
+2018-02-08 09:47:15,323 p=8813 u=root |  TASK [Gathering Facts] *******************************************************************
+2018-02-08 09:47:16,097 p=8813 u=root |  ok: [localhost]
+2018-02-08 09:47:16,101 p=8813 u=root |  TASK [Change the hosts file] *************************************************************
+2018-02-08 09:47:16,386 p=8813 u=root |  ok: [localhost]
+2018-02-08 09:47:16,387 p=8813 u=root |  PLAY RECAP *******************************************************************************
+2018-02-08 09:47:16,387 p=8813 u=root |  localhost                  : ok=2    changed=0    unreachable=0    failed=0   
+2018-02-08 09:47:16,387 p=8813 u=root |  servera.lab.example.com    : ok=6    changed=0    unreachable=0    failed=0   
+2018-02-08 09:47:25,283 p=9088 u=root |  PLAY [servera.lab.example.com] ***********************************************************
+2018-02-08 09:47:25,328 p=9088 u=root |  TASK [Gathering Facts] *******************************************************************
+2018-02-08 09:47:26,142 p=9088 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:26,146 p=9088 u=root |  TASK [Install  httpd service...Check the 2 notify statement here.One to enable firewall and 2nd to start the httpd service] ***
+2018-02-08 09:47:27,188 p=9088 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:27,191 p=9088 u=root |  TASK [Create the html website folder on servera, and copy the pre-configured config file.] ***
+2018-02-08 09:47:27,589 p=9088 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:27,593 p=9088 u=root |  TASK [Copy the index.html file to the document root of the website] **********************
+2018-02-08 09:47:28,304 p=9088 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:28,308 p=9088 u=root |  TASK [Copy the new website config file] **************************************************
+2018-02-08 09:47:28,911 p=9088 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:28,914 p=9088 u=root |  TASK [Change the hosts file] *************************************************************
+2018-02-08 09:47:29,316 p=9088 u=root |  ok: [servera.lab.example.com]
+2018-02-08 09:47:29,322 p=9088 u=root |  PLAY [localhost] *************************************************************************
+2018-02-08 09:47:29,326 p=9088 u=root |  TASK [Gathering Facts] *******************************************************************
+2018-02-08 09:47:29,739 p=9088 u=root |  ok: [localhost]
+2018-02-08 09:47:29,743 p=9088 u=root |  TASK [Change the hosts file] *************************************************************
+2018-02-08 09:47:30,027 p=9088 u=root |  ok: [localhost]
+2018-02-08 09:47:30,028 p=9088 u=root |  PLAY RECAP *******************************************************************************
+2018-02-08 09:47:30,028 p=9088 u=root |  localhost                  : ok=2    changed=0    unreachable=0    failed=0   
+2018-02-08 09:47:30,028 p=9088 u=root |  servera.lab.example.com    : ok=6    changed=0    unreachable=0    failed=0   

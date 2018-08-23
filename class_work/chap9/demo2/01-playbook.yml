@@ -1,0 +1,14 @@
+---
+- name: create user accounts for all our servers
+  hosts: all
+  remote_user: devops
+  become: yes
+  vars_files:
+    - vars/secret.yml
+  tasks:
+    - name: Creating users from secret.yml
+      user:
+        name: "{{ item.name }}"
+        password: "{{ item.pw | password_hash('sha512') }}"
+      with_items: "{{ newusers }}"
+      no_log: true

@@ -1,0 +1,14 @@
+---
+- hosts: servera.lab.example.com
+  vars:
+    message: Welcome to the world of ansible
+  tasks:
+  - name: Throw welcome.
+    debug:
+      var: message
+    when:  message is defined
+  - name: Throw exception.
+    debug:
+      msg: "Sorry you are not welcome as message is UNDEFINED"
+    when:  message is not defined
+

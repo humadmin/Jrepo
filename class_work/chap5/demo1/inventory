@@ -1,0 +1,10 @@
+[lab]
+servera.lab.example.com
+localhost
+
+[demo]
+serverb.lab.example.com
+
+[allDC:children]
+lab
+demo

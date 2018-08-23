@@ -1,0 +1,32 @@
+---
+- name: Restart and wait until the server is rebooted
+  hosts: serverb.lab.example.com servera.lab.example.com
+  remote_user: devops
+  become: true
+  serial: 1
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: restart machine
+      shell: sleep 1 && shutdown -r now "Ansible updates triggered"
+      async: 10
+      poll: 0
+      become: true
+    #  ignore_errors: true
+    - name: waiting for {{inventory_hostname}} to come back
+      wait_for:
+        host: "{{ inventory_hostname }}"
+        state: started
+        delay: 90
+        timeout: 90
+        port: 22
+      delegate_to: localhost
+      become: false
+      ignore_errors: true
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+        

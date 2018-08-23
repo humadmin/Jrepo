@@ -1,0 +1,8 @@
+Demo of managing inventory in a folder.
+
+Get the list of all hosts by 
+#ansible 'all' --list-hosts
+
+Get the list of hosts with "cloud" in its name by 
+#ansible '*cloud*' --list-hosts
+

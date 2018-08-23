@@ -1,0 +1,19 @@
+---
+- name: Install and configure vsftpd
+  hosts: servera.lab.example.com
+  become: true
+  vars:
+    vsftpd_anon_root: /mnt/share/
+    vsftpd_local_root: /mnt/share/
+  roles:
+   # - ansible-vsftpd
+  tasks:
+    - name: /dev/vdb1 is partitioned
+      command: >
+        creates=/dev/vdb1
+        parted --script /dev/vdb mklabel gpt mkpart primary 1MiB 100%
+    - name: XFS file system exists on /dev/vdb1
+      filesystem:
+        dev: /dev/vdb1
+        fstype: xfs
+        force: no

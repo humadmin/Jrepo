@@ -1,0 +1,13 @@
+servera.lab.example.com
+serverb.lab.example.com
+
+[labhosts]
+host1.lab.example.com
+host2.lab.example.com
+192.168.0.3
+
+[testhosts]
+webserver1.test.example.com
+dev1.test.example.com
+dev2
+

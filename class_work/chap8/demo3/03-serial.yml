@@ -1,0 +1,11 @@
+---
+- name: Play to demo serial-ism
+  hosts: all
+  serial: "2"
+#  serial: "20%"
+  tasks:
+  - name: Task to run on a managed hosts.
+    shell: sleep 3 && echo "The time now is `date`"
+    register: date_out
+  - debug:
+      var: date_out.stdout

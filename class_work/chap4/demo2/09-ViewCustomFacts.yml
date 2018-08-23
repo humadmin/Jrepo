@@ -1,0 +1,11 @@
+#### Please ensure you have created the custom fact file on server before running this...Refer README.customfacts
+- name: Test play
+  hosts: serverb.lab.example.com
+  remote_user: devops
+  tasks:
+    - name: Just collect custom FACTS from system setup
+      debug: 
+        msg: "The hardware asset class is {{ansible_local.hardware.asset.class}}, and is installed by {{ansible_local.hardware.asset.installedby}} "
+    - name: Display the hostname collected by setup
+      debug:
+        msg: "The server name fact collected from the hosts: {{ansible_hostname}}'"

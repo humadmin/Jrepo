@@ -1,0 +1,11 @@
+--- 
+# Starting line of playbook
+- name: My simple variable defenition example with variable in a different yml file
+  hosts: localhost 
+  remote_user: devops
+  vars_files: 
+    - variables/01-VariableDefs.yml
+  tasks:
+    - name: Task to display variable values
+      debug:
+        msg: "Variable user is {{ user }} and home is {{home}}"

@@ -1,0 +1,19 @@
+- name: Play book to demo jinja expressions.
+  become: True
+  hosts: servera.lab.example.com
+  tasks:
+    - name: Test task
+      shell: ls /etc/c*.conf
+      register: item
+    - debug:
+        msg: "{{item.stdout_lines}}"
+
+    - name: Copying the file over.
+      vars:
+        navigation: "{{item.stdout_lines}}"
+      template:
+        src: templates/listfolders.j2
+        dest: /var/www/newwebsite.com/index.html
+        owner: student
+        mode: 0664
+

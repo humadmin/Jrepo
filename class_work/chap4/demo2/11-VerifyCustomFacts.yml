@@ -1,0 +1,13 @@
+#### Please ensure you have execute the 10-InstallCustomeFacts.yml script before this demo
+
+- name: Custom Fact  Display servera
+  hosts: servera.lab.example.com
+  remote_user: devops
+  tasks:
+    - name: Retrive and display comeplete custom fact file from servera
+      debug: 
+        msg: "Details as below {{ansible_local}} "
+
+    - name: Retrive and display specific custom fact from servera
+      debug: 
+        msg: "Organization Name: {{ansible_local.servera.SysInfo.organization}} , Trainer is {{ansible_local.servera.SysInfo.trainer}}"
