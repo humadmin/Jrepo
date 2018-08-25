@@ -258,3 +258,5 @@ ls -ltr
 git checkout master
 ls -ltr
 git commit -m "untracked"
+git checkout .bash_history
+git checkout master
