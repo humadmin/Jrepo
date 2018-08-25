@@ -1,0 +1,10 @@
+---
+- name: NON- Idempotent scripts
+  hosts: servera.lab.example.com
+  tasks:
+    - name: Create a file at tmp directory
+      shell: echo "Welcome to Ansible .. Its easy to learn Ansible " > /tmp/Welcome.txt
+    - name: Create a link at home folder for the file
+      command: ln -s /tmp/Welcome.txt /home/devops/welcome.txt 
+    - name: Non-idempotent approach with shell module
+      shell: echo "nameserver 192.0.2.1" > /etc/resolv.conf

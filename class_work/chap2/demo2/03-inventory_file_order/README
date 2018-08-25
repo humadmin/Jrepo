@@ -1,0 +1,16 @@
+Demo of lexical order of inventory files.
+
+Attempt to get the list of all hosts by 
+# ansible 'all' --list-hosts
+
+but it fails saying,
+ERROR! inventory/file0:2: Section [east:children] includes undefined group: webeast
+
+Reason: A file, earlier in lexical order, is trying to reference a group which is defined in a later file.
+
+Move file0 to the last file in the order and try again.
+# mv inventory/file0 inventory/file5
+
+and try to get the list of hosts in any group like, 
+# ansible '*east*' --list-hosts
+

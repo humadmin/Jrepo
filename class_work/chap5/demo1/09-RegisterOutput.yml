@@ -1,0 +1,12 @@
+###  Just a sequence generator...creating users with a patter
+---
+- name: Testing with_sequence command loop
+  hosts: serverb.lab.example.com
+  tasks:
+    - name: List  server
+      shell: echo "{{item}}"
+      with_items:
+        - hello
+        - world
+      register: some_variable
+    - debug: var=some_variable

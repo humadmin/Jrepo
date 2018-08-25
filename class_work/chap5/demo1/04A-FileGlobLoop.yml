@@ -1,0 +1,11 @@
+###  Just a file glob statement...listing  from etc folder all files c*.conf
+---
+- name: Check how the listing appears below
+  hosts: serverb.lab.example.com
+  tasks:
+    - name: List c*.conf from the server
+      debug: 
+        msg: " --->>>  {{item}} "
+
+      with_fileglob: 
+        - /etc/c*.conf

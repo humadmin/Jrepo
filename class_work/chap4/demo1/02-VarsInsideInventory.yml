@@ -1,0 +1,9 @@
+--- 
+# Variables defined inside inventory file for each hosts and grouped host. display the invetory file to see the variable defenitions
+- name: Host and Group variables in inventroy file
+  hosts: allDC
+  remote_user: devops
+  tasks:
+    - name: Task to display variable values
+      debug:
+        msg: "Special individual user is {{user}} and the common user in both is {{user1}}."

@@ -1,0 +1,19 @@
+#### Please ensure you have created the custom fact file servera.fact on workstation currnt folder before running this...Refer README.customfacts to create the file if not present
+
+- name: Custom Fact File creation on servera
+  hosts: servera.lab.example.com
+  remote_user: devops
+  vars:
+    remote_dir: /etc/ansible/facts.d
+    facts_file: servera.fact
+  tasks:
+    - name: Just install custom fact file from workstation to servera
+      file:
+        state: directory
+        recurse: yes
+        path: "{{remote_dir}}"
+    - name: Install the fact file on the desired system
+      copy:
+        src: "{{facts_file}}"
+        dest: "{{remote_dir}}"
+

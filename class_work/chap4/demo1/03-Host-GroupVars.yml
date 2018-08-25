@@ -1,0 +1,9 @@
+--- 
+# Starting line of playbook
+- name: Host and Group variables in inventroy file
+  hosts: allDC 
+  remote_user: devops
+  tasks:
+    - name: Task to display variable values
+      debug:
+        msg: "PAckage defenition hosts is {{package}} and group/common is {{package1}} var1 is {{var1}}"

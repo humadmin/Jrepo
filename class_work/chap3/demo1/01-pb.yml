@@ -1,0 +1,10 @@
+---
+  - name: My first Playbook
+    hosts: all
+    remote_user: root
+    tasks:
+      - name: Add a user
+        user:
+          name: user2
+          state: present
+

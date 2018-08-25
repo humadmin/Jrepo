@@ -1,0 +1,17 @@
+---
+- name: Idempotent scripts
+  hosts: servera.lab.example.com
+  tasks:
+    - name: Create a file at tmp directory
+      shell: echo "Welcome to Ansible .. Its easy to learn Ansible in a classroom environment " > /tmp/Welcome.txt
+            
+    - name: Create a Link the IDEMPOTENT Way
+      file: src=/tmp/Welcome.txt dest=/home/devops/welcome.txt state=link
+
+    - name: Append a resolv.conf entry
+      lineinfile:
+        dest: /etc/resolv.conf
+        line: "nameserver 192.168.1.1"
+        state: present
+        insertafter: EOF
+        create: true

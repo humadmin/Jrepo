@@ -1,0 +1,15 @@
+###  Just a simple loop structure. We define 3 packages and we use the debug msg to cycle through it
+---
+- hosts: serverb.lab.example.com
+  vars:
+    pkgs:
+      - httpd
+      - telnet
+      - ftp
+  tasks:
+  - name: Install 3 packages ...here we cycle using with_items and pkgs defined as variables
+    yum:
+      name: "{{item}}"
+      state: latest
+    with_items: 
+      - "{{pkgs}}"

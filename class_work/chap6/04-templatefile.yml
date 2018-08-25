@@ -1,0 +1,10 @@
+- name: Play book to demo Jinja 2 templates.
+  become: True
+  hosts: remote
+  tasks:
+    - name: Copying the file over to the servers.
+      template:
+        src: templates/mymessage.j2
+        dest: /etc/app_param.conf
+        owner: student
+        mode: 0664

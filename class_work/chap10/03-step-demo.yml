@@ -1,0 +1,15 @@
+- name: Play to demo state module
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task1
+    debug:
+      msg: "This is task1"
+  - name: Task2
+    debug:
+      msg: "This is task2"
+  - name: Task3
+    debug:
+      msg: "This is task3"
+  - name: Task4
+    debug:
+      msg: "This is task4"

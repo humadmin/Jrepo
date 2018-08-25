@@ -1,0 +1,32 @@
+--- 
+# Starting line of playbook
+- name: Executing YML with ansible variables and testing
+  hosts: allDC
+  remote_user: devops
+  vars: 
+    users:
+      hman:
+        first_name: Happy
+        last_name: Man
+        home_dir: /home/hapyman
+        user_name: hapyman
+      jpoke:
+        first_name: Joker
+        last_name: Poker
+        home_dir: /home/jopo
+        user_name: jopo
+  tasks:
+    - name: Adding user "{{ users.hman.user_name }}" 
+      user: 
+        name: "{{ users.hman.user_name }}" 
+        state: present 
+    - name: Adding user "{{ users.jpoke.user_name }}" 
+      user: 
+        name: "{{ users.jpoke.user_name }}" 
+        state: present
+    - name: install package "{{package}}" and "{{package1}}"
+      yum:
+        name: 
+          - "{{package}}"
+          - "{{package1}}"
+        state: latest

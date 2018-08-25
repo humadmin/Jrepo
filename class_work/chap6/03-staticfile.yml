@@ -1,0 +1,10 @@
+- name: Play book to demo file copy.
+  become: True
+  hosts: remote
+  tasks:
+    - name: Copying the file over to the servers.
+      copy:
+        src: templates/mymessage
+        dest: /etc/app_param.conf
+        owner: student
+        mode: 0664

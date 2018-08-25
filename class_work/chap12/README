@@ -1,0 +1,25 @@
+lab ansible-vagrant-practice setup
+
+mkdir -p vagrant/webapp
+cd vagrant/webapp
+cp /var/tmp/Vagrantfile .
+cat Vagrantfile
+vagrant up
+vagrant ssh
+yum repolist
+
+exit
+
+
+mkdir -p /root/vagrant/webapp/etc/yum.repos.d
+
+cp /etc/yum.repos.d/rhel_dvd_repo  /root/vagrant/webapp/etc/yum.repos.d
+
+create a file provisioner.sh
+
+#!/bin/bash
+sudo cp /home/vagrant/sync/etc/yum.repos.d/rhel_dvd_repo  /etc/yum.repos.d/rhel_dvd.repo
+
+define provisioner in file
+
+config.vm.provsion "shell", path: "provisioner.sh"

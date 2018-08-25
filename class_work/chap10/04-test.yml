@@ -1,0 +1,13 @@
+- name: Play to demo state module
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task1
+    command: "ls /tmp"
+    register: ls_out
+  - name: Task2
+    debug:
+      var: ls_out.stdout_lines
+  - name: Task3
+    debug:
+      msg: Hello
+    when: "'motd1' in ls_out.stdout_lines"

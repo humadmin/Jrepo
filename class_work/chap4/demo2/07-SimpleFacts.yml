@@ -1,0 +1,13 @@
+- name: Test play
+  hosts: servera.lab.example.com local
+  remote_user: devops
+  tasks:
+    - name: Just collect FACTS from system setup...ip address
+      debug: 
+        msg: "The ip address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}"
+    - name: Display the hostname collected by setup
+      debug:
+        msg: "The server name fact collected from the hosts: {{ansible_hostname}}'"
+    - name: Display the hard-disk size collected by setup
+      debug:
+        msg: "The server name fact collected from the hosts: {{ansible_devices.vda.size}}'"

@@ -1,0 +1,27 @@
+lab ansible-devops-practice setup
+
+cd vagrant/webapp
+vagrant status    #### If its running then run  vagrant destroy
+
+cp /var/tmp/intranet-dev.yml .
+vi Vagrantfile
+
+(add the below conent in the ansible provider section)
+	config.vm.provision "ansible" do |ansible|
+            ansible.playbook = "intranet-dev.yml"
+        end
+
+(add this line at the host settings section, below the hostname defenition)
+config.vm.network "forwarded_port", guest: 80, host: 8000
+
+
+Save and exit
+
+Install Ansible
+yum install -y ansible
+
+vagrant up
+
+check the site
+
+curtl http://localhost:8000

@@ -1,0 +1,14 @@
+###  Just a simple loop structure. We define 3 users as system users and we use the debug msg to cycle through it
+---
+- name: Testing user addition ....check servera /etc/passwd after the command is run succesfully
+  hosts: servera.lab.example.com
+  tasks:
+    - name: Create the users
+      user: 
+        name: "{{item.name}}"
+        state: present
+        password: "{{item.password}}"
+      with_items: 
+        - { name: 'admin', password: "{{'password'|password_hash('sha512')}}"}
+        - { name: 'user1', password: "{{'password'|password_hash('sha512')}}"}
+        - { name: 'bkuser', password: "{{'password'|password_hash('sha512')}}"}

@@ -1,0 +1,10 @@
+---
+- name: Random indendation Playbook
+  hosts: servera.lab.example.com
+  remote_user: root
+  tasks:
+           - name: Add a user
+             user:
+                name: user3
+                #state: present
+                state: present

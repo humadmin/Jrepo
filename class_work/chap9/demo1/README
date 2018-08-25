@@ -1,0 +1,7 @@
+ansible-vault create secret.yml
+
+ansible-vault edit secret.yml
+
+ansible-vault encrypt secret1.yml
+
+ansible-vault decrypt secret1.yml --output=secret1-decrypted.yml

@@ -1,0 +1,356 @@
+2018-02-15 09:15:07,934 p=9825 u=student |  ERROR! the playbook: 02-stat_demo. could not be found
+2018-02-15 09:15:09,976 p=9832 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:15:10,023 p=9832 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:15:11,292 p=9832 u=student |  ok: [localhost]
+2018-02-15 09:15:11,297 p=9832 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:15:11,889 p=9832 u=student |  ok: [localhost]
+2018-02-15 09:15:11,894 p=9832 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:15:11,919 p=9832 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:15:11,930 p=9832 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:15:11,954 p=9832 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:15:11,958 p=9832 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:15:11,959 p=9832 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:15:11,959 p=9832 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:16:03,329 p=10032 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:16:03,378 p=10032 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:16:04,545 p=10032 u=student |  ok: [localhost]
+2018-02-15 09:16:04,554 p=10032 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:16:04,994 p=10032 u=student |  ok: [localhost]
+2018-02-15 09:16:04,999 p=10032 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:16:05,030 p=10032 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:16:05,036 p=10032 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:16:05,075 p=10032 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:16:05,076 p=10032 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:16:05,076 p=10032 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:16:05,077 p=10032 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:19:06,086 p=10241 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:19:25,914 p=10241 u=student |  Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *******************************
+2018-02-15 09:19:25,917 p=10241 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:19:27,036 p=10241 u=student |  ok: [localhost]
+2018-02-15 09:19:32,913 p=10241 u=student |  Perform task: TASK: Task1 (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:19:39,241 p=10241 u=student |  Perform task: TASK: debug (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:19:45,598 p=10241 u=student |  Perform task: TASK: assert (N)o/(y)es/(c)ontinue: ****************************************
+2018-02-15 09:19:45,603 p=10241 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:19:45,631 p=10241 u=student |  fatal: [localhost]: FAILED! => {"failed": true, "msg": "The conditional check 'stat_out.stat.exists' failed. The error was: error while evaluating conditional (stat_out.stat.exists): 'stat_out' is undefined"}
+2018-02-15 09:19:45,633 p=10241 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:19:45,633 p=10241 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:19:45,633 p=10241 u=student |  localhost                  : ok=1    changed=0    unreachable=0    failed=1   
+2018-02-15 09:19:48,557 p=10355 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:19:50,500 p=10355 u=student |  Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *******************************
+2018-02-15 09:19:50,502 p=10355 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:19:51,410 p=10355 u=student |  ok: [localhost]
+2018-02-15 09:19:53,230 p=10355 u=student |  Perform task: TASK: Task1 (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:19:53,234 p=10355 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:19:53,790 p=10355 u=student |  ok: [localhost]
+2018-02-15 09:20:12,148 p=10355 u=student |  Perform task: TASK: debug (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:20:12,153 p=10355 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:20:12,179 p=10355 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:20:21,479 p=10355 u=student |  Perform task: TASK: assert (N)o/(y)es/(c)ontinue: ****************************************
+2018-02-15 09:20:21,483 p=10355 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:20:21,511 p=10355 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:20:21,512 p=10355 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:20:21,513 p=10355 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:20:21,513 p=10355 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:20:52,863 p=10540 u=student |  Using /home/student/ShashiAnsibleDemos/chap10/ansible.cfg as config file
+2018-02-15 09:20:53,181 p=10540 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:20:53,270 p=10540 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:20:54,570 p=10540 u=student |  ok: [localhost]
+2018-02-15 09:20:54,574 p=10540 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:20:55,157 p=10540 u=student |  ok: [localhost] => {"changed": false, "stat": {"exists": false}}
+2018-02-15 09:20:55,164 p=10540 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:20:55,198 p=10540 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:20:55,207 p=10540 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:20:55,235 p=10540 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:20:55,238 p=10540 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:20:55,239 p=10540 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:20:55,239 p=10540 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:21:00,915 p=10738 u=student |  Using /home/student/ShashiAnsibleDemos/chap10/ansible.cfg as config file
+2018-02-15 09:21:01,048 p=10738 u=student |  PLAYBOOK: 02-stat_demo.yml ***************************************************************
+2018-02-15 09:21:01,049 p=10738 u=student |  1 plays in 02-stat_demo.yml
+2018-02-15 09:21:01,075 p=10738 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:21:01,124 p=10738 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:21:01,888 p=10738 u=student |  ok: [localhost]
+2018-02-15 09:21:01,889 p=10738 u=student |  META: ran handlers
+2018-02-15 09:21:01,897 p=10738 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:21:01,897 p=10738 u=student |  task path: /home/student/ShashiAnsibleDemos/chap10/02-stat_demo.yml:5
+2018-02-15 09:21:02,371 p=10738 u=student |  ok: [localhost] => {"changed": false, "stat": {"exists": false}}
+2018-02-15 09:21:02,376 p=10738 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:21:02,376 p=10738 u=student |  task path: /home/student/ShashiAnsibleDemos/chap10/02-stat_demo.yml:9
+2018-02-15 09:21:02,397 p=10738 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:21:02,402 p=10738 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:21:02,402 p=10738 u=student |  task path: /home/student/ShashiAnsibleDemos/chap10/02-stat_demo.yml:12
+2018-02-15 09:21:02,428 p=10738 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:21:02,430 p=10738 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:21:02,430 p=10738 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:21:02,430 p=10738 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:21:08,251 p=10900 u=student |  Using /home/student/ShashiAnsibleDemos/chap10/ansible.cfg as config file
+2018-02-15 09:21:08,323 p=10900 u=student |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-02-15 09:21:08,387 p=10900 u=student |  PLAYBOOK: 02-stat_demo.yml ***************************************************************
+2018-02-15 09:21:08,387 p=10900 u=student |  1 plays in 02-stat_demo.yml
+2018-02-15 09:21:08,416 p=10900 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:21:08,467 p=10900 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:21:08,736 p=10900 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-02-15 09:21:09,323 p=10900 u=student |  ok: [localhost]
+2018-02-15 09:21:09,324 p=10900 u=student |  META: ran handlers
+2018-02-15 09:21:09,333 p=10900 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:21:09,334 p=10900 u=student |  task path: /home/student/ShashiAnsibleDemos/chap10/02-stat_demo.yml:5
+2018-02-15 09:21:09,486 p=10900 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-02-15 09:21:09,902 p=10900 u=student |  ok: [localhost] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1", 
+            "follow": false, 
+            "get_attributes": true, 
+            "get_checksum": true, 
+            "get_md5": true, 
+            "get_mime": true, 
+            "path": "/tmp/motd1"
+        }
+    }, 
+    "stat": {
+        "exists": false
+    }
+}
+2018-02-15 09:21:09,906 p=10900 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:21:09,906 p=10900 u=student |  task path: /home/student/ShashiAnsibleDemos/chap10/02-stat_demo.yml:9
+2018-02-15 09:21:09,942 p=10900 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:21:09,948 p=10900 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:21:09,948 p=10900 u=student |  task path: /home/student/ShashiAnsibleDemos/chap10/02-stat_demo.yml:12
+2018-02-15 09:21:09,984 p=10900 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:21:09,986 p=10900 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:21:09,986 p=10900 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:21:09,986 p=10900 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:23:30,354 p=11115 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:23:33,488 p=11115 u=student |  Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *******************************
+2018-02-15 09:23:33,490 p=11115 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:23:34,640 p=11115 u=student |  ok: [servera.lab.example.com]
+2018-02-15 09:23:37,774 p=11115 u=student |  Perform task: TASK: Task1 (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:23:37,781 p=11115 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:23:37,819 p=11115 u=student |  ok: [servera.lab.example.com] => {
+    "msg": "This is task1"
+}
+2018-02-15 09:23:40,301 p=11115 u=student |  Perform task: TASK: Task2 (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:23:40,304 p=11115 u=student |  TASK [Task2] *****************************************************************************
+2018-02-15 09:23:40,323 p=11115 u=student |  ok: [servera.lab.example.com] => {
+    "msg": "This is task2"
+}
+2018-02-15 09:23:43,256 p=11115 u=student |  Perform task: TASK: Task3 (N)o/(y)es/(c)ontinue: *****************************************
+2018-02-15 09:23:43,260 p=11115 u=student |  TASK [Task3] *****************************************************************************
+2018-02-15 09:23:43,292 p=11115 u=student |  ok: [servera.lab.example.com] => {
+    "msg": "This is task3"
+}
+2018-02-15 09:23:43,295 p=11115 u=student |  TASK [Task4] *****************************************************************************
+2018-02-15 09:23:43,327 p=11115 u=student |  ok: [servera.lab.example.com] => {
+    "msg": "This is task4"
+}
+2018-02-15 09:23:43,329 p=11115 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:23:43,329 p=11115 u=student |  servera.lab.example.com    : ok=5    changed=0    unreachable=0    failed=0   
+2018-02-15 09:40:25,100 p=11362 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:40:25,172 p=11362 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:40:26,677 p=11362 u=student |  ok: [localhost]
+2018-02-15 09:40:26,687 p=11362 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:40:27,206 p=11362 u=student |  ok: [localhost]
+2018-02-15 09:40:27,218 p=11362 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:40:27,264 p=11362 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:40:27,273 p=11362 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:40:27,301 p=11362 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:40:27,303 p=11362 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:40:27,303 p=11362 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:40:27,303 p=11362 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:46:07,549 p=11617 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:46:07,596 p=11617 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:46:09,082 p=11617 u=student |  ok: [localhost]
+2018-02-15 09:46:09,087 p=11617 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:46:09,498 p=11617 u=student |  ok: [localhost]
+2018-02-15 09:46:09,503 p=11617 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:46:09,523 p=11617 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "exists": false
+        }
+    }
+}
+2018-02-15 09:46:09,528 p=11617 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:46:09,554 p=11617 u=student |  fatal: [localhost]: FAILED! => {
+    "assertion": "stat_out.stat.exists", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "failed": true
+}
+2018-02-15 09:46:09,556 p=11617 u=student |  	to retry, use: --limit @/home/student/ShashiAnsibleDemos/chap10/02-stat_demo.retry
+
+2018-02-15 09:46:09,556 p=11617 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:46:09,556 p=11617 u=student |  localhost                  : ok=3    changed=0    unreachable=0    failed=1   
+2018-02-15 09:47:20,103 p=11829 u=student |  PLAY [Play to demo state module] *********************************************************
+2018-02-15 09:47:20,149 p=11829 u=student |  TASK [Gathering Facts] *******************************************************************
+2018-02-15 09:47:21,490 p=11829 u=student |  ok: [localhost]
+2018-02-15 09:47:21,494 p=11829 u=student |  TASK [Task1] *****************************************************************************
+2018-02-15 09:47:22,092 p=11829 u=student |  ok: [localhost]
+2018-02-15 09:47:22,097 p=11829 u=student |  TASK [debug] *****************************************************************************
+2018-02-15 09:47:22,118 p=11829 u=student |  ok: [localhost] => {
+    "stat_out": {
+        "changed": false, 
+        "stat": {
+            "atime": 1518659231.4819882, 
+            "attr_flags": "", 
+            "attributes": [], 
+            "block_size": 4096, 
+            "blocks": 0, 
+            "charset": "binary", 
+            "checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+            "ctime": 1518659231.4819882, 
+            "dev": 64769, 
+            "device_type": 0, 
+            "executable": false, 
+            "exists": true, 
+            "gid": 1000, 
+            "gr_name": "student", 
+            "inode": 15388877, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "md5": "d41d8cd98f00b204e9800998ecf8427e", 
+            "mimetype": "inode/x-empty", 
+            "mode": "0664", 
+            "mtime": 1518659231.4819882, 
+            "nlink": 1, 
+            "path": "/tmp/motd1", 
+            "pw_name": "student", 
+            "readable": true, 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 0, 
+            "uid": 1000, 
+            "version": "18446744073518083923", 
+            "wgrp": true, 
+            "woth": false, 
+            "writeable": true, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    }
+}
+2018-02-15 09:47:22,125 p=11829 u=student |  TASK [assert] ****************************************************************************
+2018-02-15 09:47:22,164 p=11829 u=student |  ok: [localhost] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2018-02-15 09:47:22,168 p=11829 u=student |  TASK [Task2] *****************************************************************************
+2018-02-15 09:47:22,598 p=11829 u=student |  changed: [localhost]
+2018-02-15 09:47:22,603 p=11829 u=student |  PLAY RECAP *******************************************************************************
+2018-02-15 09:47:22,603 p=11829 u=student |  localhost                  : ok=5    changed=1    unreachable=0    failed=0   
+2018-02-15 09:51:07,034 p=12142 u=student |  ERROR! Missing target hosts
+2018-02-15 09:51:13,819 p=12147 u=student |  localhost | FAILED | rc=1 >>
+id: shashi: no such user
+
+2018-02-15 09:51:26,777 p=12241 u=student |  localhost | SUCCESS | rc=0 >>
+uid=1003(shashi) gid=1003(shashi) groups=1003(shashi)
+
+2018-02-15 09:51:54,741 p=12312 u=student |   [WARNING]: No hosts matched, nothing to do
+
+2018-02-15 09:52:11,797 p=12336 u=student |  servera.lab.example.com | FAILED | rc=1 >>
+id: shashi: no such user
+
