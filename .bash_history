@@ -159,3 +159,102 @@ git push --set-upstream bitbuck_dev bitbuck_dev
 ls
 ls -ltr
 git status
+git add .bash_history
+git add .gitconfig .ssh/ #       .viminfo
+git add .gitconfig 
+git add .ssh
+git add Uat
+git add git_devawx
+git add repos
+git add repot
+git status
+git add class_work
+git add .viminfo 
+git status
+git commit -m "Untracked"
+git config --global jitendra.deshmukh
+git config --global jitendrad
+git config --global jitendra
+git config --global user.jitendra
+git commit -m "Untracked"
+ git config --global user.email "you@example.com"
+git config --global user.name "jitendra"
+git commit -m "Untracked"
+git status
+git push 
+git statu s
+git status
+clear
+git statu 
+git branch
+ls
+ls -ltr
+git branch -m bitbuck_dev stash_bitbucket
+git status
+git commit -a
+git push 
+git push bitbuck_dev HEAD:bitbuck_dev
+ git push bitbuck_dev stash_bitbucket
+git show
+git status
+git push 
+git push bitbuck_dev stash_bitbucket
+ssh git@github.com:humadmin/Jrepo.git
+ssh git@github.com:humadmin
+ssh github
+ping github
+git status
+clear 
+pwd
+ls -ltr
+cd UAT
+cd Uat
+ll
+cd ..
+git status
+git rm Uat
+git rm -rf Uat
+git rm -r Uat
+git status
+git list
+git rev-list
+pwd
+ls -ltr
+rm -rf old_dev/
+git status
+git push 
+git branch 
+git clone git@bitbucket.org:jitendra_desh/bitbuck_dev.git
+git status
+ls -ltr
+git add bitbuck_dev
+git commit -m "On bitbucket"
+git push 
+ls -ltr
+cd bitbuck_dev
+ls
+cd ..
+pwd
+git branch 
+git add remote 
+git add
+git status
+git commit -a
+git status
+git push remote
+get push 
+git push 
+git remote add stash_bitbucket origin git@bitbucket.org:jitendra_desh/bitbuck_dev.git
+git remote add -m stash_bitbucket origin git@bitbucket.org:jitendra_desh/bitbuck_dev.git
+git push origin stash_bitbucket
+git push origin bitbuck_dev.git
+git remote add -m stash_bitbucket git@bitbucket.org:jitendra_desh/bitbuck_dev.git
+git remote add -m stash_bitbucket origin git@bitbucket.org:jitendra_desh/bitbuck_dev.git
+git push origin master
+id
+git remote add -m stash_bitbucket origin jitendrad@bitbucket.org:jitendra_desh/bitbuck_dev.git
+pwd
+ls -ltr
+git checkout master
+ls -ltr
+git commit -m "untracked"
