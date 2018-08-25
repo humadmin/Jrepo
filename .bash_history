@@ -260,3 +260,18 @@ ls -ltr
 git commit -m "untracked"
 git checkout .bash_history
 git checkout master
+git checkout -f stash_bitbucket
+pwd
+ls
+ls s-lart
+ls -latr
+pwd
+cd ..
+ansible -m ping all 
+pwd
+ls -ltr
+cd bitbuck_dev
+ls
+cd -
+git branch 
+git checkout git_devawx
