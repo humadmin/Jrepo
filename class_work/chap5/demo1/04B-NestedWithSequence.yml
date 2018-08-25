@@ -1,0 +1,10 @@
+###  Just a sequence generator...creating users with a patter
+---
+- name: Testing with_sequence command loop
+  hosts: serverb.lab.example.com
+  tasks:
+    - name: create sequential users
+      debug: 
+        msg: " --->>>  {{item}} "
+
+      with_sequence: start=0 end=5 format=ldapuser%01x

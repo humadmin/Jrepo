@@ -1,0 +1,13 @@
+- name: Play book to demo jinja expressions.
+  become: True
+  hosts: localhost
+  tasks:
+    - name: Test task
+      command: ls -l /etc
+      register: ls_out
+    - name: Copying the file over.
+      template:
+        src: templates/jinja-test.j2
+        dest: /tmp/jinja-test
+        owner: student
+        mode: 0664

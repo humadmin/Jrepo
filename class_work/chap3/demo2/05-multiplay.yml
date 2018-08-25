@@ -1,0 +1,36 @@
+--- 
+# Starting line of playbook
+- name: A playbook with multiple PLAYS. Install httpd and  start that service on servera and install database in serverb
+  hosts: servera.lab.example.com 
+  remote_user: devops
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+    - name: Installation of httpd (Play 1)
+      yum: 
+        name: httpd 
+        state: latest
+    - name: second task of enabling httpd 
+      service: 
+        name: httpd 
+        state: started 
+        enabled: true
+
+
+- name: Install mariadb  start those service on serverb. This is second play in the same playbook
+  hosts: serverb.lab.example.com 
+  remote_user: devops
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+    - name : Install mariadb (2nd Play)
+      yum: 
+        name: mariadb-server 
+        state: latest
+    - name: Task to start mariadb
+      service: 
+        name: mariadb 
+        state: started 
+        enabled: true

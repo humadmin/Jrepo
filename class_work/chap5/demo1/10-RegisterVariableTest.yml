@@ -1,0 +1,13 @@
+- hosts: servera.lab.example.com
+  tasks:
+    - name: Checking status of HTTPD
+      command: /usr/bin/systemctl is-active httpd
+      ignore_errors: yes
+      register: result
+    - debug: var=result
+    - name: Restart Apache HTTPD if httpd is not running
+      service:
+        name: httpd
+        state: restarted
+      ignore_errors: yes
+      when: result.failed == true

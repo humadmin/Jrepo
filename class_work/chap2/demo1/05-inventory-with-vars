@@ -1,0 +1,7 @@
+[webservers]
+webserver1.example.com http_port=8080
+webserver[2:10].example.com
+
+
+[webservers:vars]
+http_port=80

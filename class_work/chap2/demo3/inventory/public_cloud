@@ -1,0 +1,8 @@
+localhost
+[east-zone]
+#sfo.cloud.example.com
+serverb.lab.example.com
+
+[w-zone]
+canberra.cloud.test.com
+servera.lab.example.com

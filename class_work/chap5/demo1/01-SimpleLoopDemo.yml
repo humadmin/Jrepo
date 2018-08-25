@@ -1,0 +1,12 @@
+###  Just a simple loop structure. We define 3 packages and we use the debug msg to cycle through it
+---
+- hosts: serverb.lab.example.com
+  tasks:
+  - name: Install 3 packages ...here we cycle using with_items clause
+    debug:
+      msg: "package  {{item}} will be installed"
+    with_items: 
+      - httpd
+      - telnet
+      - ftp
+

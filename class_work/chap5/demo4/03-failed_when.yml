@@ -1,0 +1,17 @@
+---
+- hosts: servera.lab.example.com
+  tasks:
+  - name: Copy the script which is a pre-req for the demo
+    copy:
+      src: failed_when_files/app-test
+      dest: /usr/local/bin
+      owner: root
+      mode: 0755
+  
+  - name: Run the app-test script
+    command: /usr/local/bin/app-test
+    register: testout
+
+  - name: Display the output of app-test
+    debug:
+      var: testout.stdout_lines

@@ -1,0 +1,17 @@
+--- 
+# Starting line of playbook
+- name: A simple playbook with multiple tasks, install and start httpd service on listed hosts
+  hosts: all
+  remote_user: devops
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+    - name: First task of Installation of httpd
+      yum:  name=httpd state=latest   # OLDER FORMAT , BUT STILL WORKS, IDEALLY AVOID THIS AND FOLLOW BELOW METHOD
+    - name: Second task of Enabling httpd (multiline formatted code)
+      service: 
+        name=httpd
+        state=started
+        enabled=true
+

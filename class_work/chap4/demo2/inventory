@@ -1,0 +1,21 @@
+localhost 
+local  ansible_connection=local absible_user=devops testvar=just_a_value_from_inventory user=shashi home=/home/shashi
+
+[lab]
+servera.lab.example.com
+
+[demo]
+serverb.lab.example.com
+
+[allDC:children]
+lab
+demo
+
+[lab:vars]
+user=shashi
+
+[demo:vars]
+user=adminstrator
+
+[allDC:vars]
+user1=wonderman

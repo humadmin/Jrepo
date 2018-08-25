@@ -1,0 +1,56 @@
+### PLEASE delete httpd package on servera Install Httpd on a server, start the service, open the firewall port on installaing , copy and start the web server an access it
+---
+- hosts: servera.lab.example.com
+  tasks:
+  - name: Install  httpd service...Check the 2 notify statement here.One to enable firewall and 2nd to start the httpd service
+    yum:
+      name: httpd
+      state: latest
+    notify:
+      - enable_firewall
+      - start_restart_httpd
+
+
+  - name: Create the html website folder on servera, and copy the pre-configured config file.
+    file:
+      path: /var/www/newwebsite.com
+      state: directory
+  - name: Copy the index file to the document root
+    copy:
+      src: newwebsite/index.html
+      dest: /var/www/newwebsite.com/
+  - name: Copy the config file for the new website  ### note the handler here, after changing httpd config restarting the service
+    copy:
+      src: /home/student/ShashiAnsibleDemos/chap5/demo2/newwebsite/newwebsite.conf
+      dest: /etc/httpd/conf.d/
+    notify:
+      - start_restart_httpd
+  - name: Change the hosts file #### Changing the hosts file of the servara system to local resolving , not needed but just changing
+    lineinfile:
+      dest: /etc/hosts
+      regexp: '^127.0.0.1'
+      line: '127.0.0.1    localhost localhost.localdomain localhost4 localhost4.localdomain4 www.newwebsite.com'
+
+  
+  handlers:
+    - name: enable_firewall
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: true
+        
+    - name: start_restart_httpd
+      service:
+        name: httpd
+        state: restarted
+      notify: enable_firewall
+
+
+- hosts: localhost
+  tasks:
+  - name: Change the hosts file   #### second play to change the hosts of workstation system.
+    lineinfile:
+      dest: /etc/hosts
+      regexp: '^172.25.250.10'
+      line: '172.25.250.10  servera.lab.example.com servera www.newwebsite.com'

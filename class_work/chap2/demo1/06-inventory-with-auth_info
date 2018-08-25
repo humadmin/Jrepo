@@ -1,0 +1,8 @@
+
+localhost ansible_connection=local
+
+[production]
+webserver[1:10].example.com ansible_connection=ssh ansible_user=prodpusher
+
+[qa]
+test[1:2].example.com ansible_user=tester

@@ -1,0 +1,16 @@
+---
+- hosts: dbservers
+  tasks:
+    - name: Import the variables file
+      include_vars: paths.yml
+
+    - name: Create the remote directory
+      file:
+        path: "{{ paths.dbpath}}"
+        state: directory
+        mode: 0755
+      register: result
+
+    - name: Debug the results
+      debug:
+        var: result

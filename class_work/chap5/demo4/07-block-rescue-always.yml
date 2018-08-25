@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+    - block:
+      - name: Copy the config file1
+        copy:
+          src: /tmp/myapp1.conf
+          dest: /etc/myapp1.conf
+          owner: student
+          mode: 0644
+
+      rescue:
+      - debug:
+          msg: "The copying of app config file failed."
+      
+      always:
+        - debug:
+            msg: "This is to be executed always, No matter what!!"

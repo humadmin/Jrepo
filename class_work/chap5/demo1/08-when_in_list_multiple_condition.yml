@@ -1,0 +1,15 @@
+---
+- hosts: all
+  vars:
+    my_special_user: shashi
+    superusers:
+      - root
+      - shashi
+      - toor
+  tasks:
+  - name: Task runs if my_special_user is in superusers
+    user:
+      name: "{{ my_special_user }}"
+      groups: wheel
+      append: yes
+    when: my_special_user in superusers and ansible_fqdn == "servera.lab.example.com"

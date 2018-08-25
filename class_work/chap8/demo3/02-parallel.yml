@@ -1,0 +1,9 @@
+---
+- name: Play to demo parallelism
+  hosts: all
+  tasks:
+  - name: Task to run on a managed hosts.
+    shell: sleep 3 && echo "The time now is `date`"
+    register: date_out
+  - debug:
+      var: date_out.stdout

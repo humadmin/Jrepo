@@ -1,0 +1,29 @@
+---
+- name: Play to demo ingnore error of a block
+  hosts: servera.lab.example.com
+  tasks:
+  - block:
+    - name: Task1 which is expecting a good run
+      yum:
+        name: vsftpd
+        state: latest
+    - name: Task2 which is expecting a bad run
+      yum:
+        name: httpd-blah
+        state: latest
+    - name: Task3 which is expecting a good run
+      yum:
+        name: squid
+        state: latest
+    rescue:
+      - name: Task being  rescueed
+        debug:
+          msg: "This is task from rescue block"
+    always:
+      - name: Task1 in always
+        debug:
+          msg: "This is task from always block"
+  - name: Task3
+    debug:
+      msg: "This is a generic task from outside of block-rescue-always"
+

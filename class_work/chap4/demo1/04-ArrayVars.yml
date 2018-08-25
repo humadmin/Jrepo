@@ -1,0 +1,21 @@
+--- 
+# Starting line of playbook
+- name: Using  ARRAY Type variables. Defined below are two users in arrays
+  hosts: local
+  remote_user: devops
+  vars: 
+    users:
+      hman:
+        first_name: Happy
+        last_name: Man
+        home_dir: /home/hapyman
+        login_name: happyman
+      jpoke:
+        first_name: Joker
+        last_name: Poker
+        home_dir: /home/jopo
+        login_name: jopo
+  tasks:
+    - name: Task to display variable values
+      debug:
+        msg: "Users names are {{users.hman.first_name}} {{users.hman.last_name}} and {{users.jpoke.first_name}}  {{users.jpoke.last_name}} .....  Home directories are  {{users.hman.home_dir}} , {{users.jpoke.home_dir}} and corressponding login names are {{users.hman.login_name}} and {{users.jpoke.login_name}}"

@@ -1,0 +1,11 @@
+---
+- hosts: fileservers
+  tasks:
+    - name: Include the variable
+      include_vars: package.yml
+
+    - name: Install the package
+      include: install_package.yml
+      vars:
+        packages:
+          web_pkg: tomcat

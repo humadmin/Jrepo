@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - name: Display the ansible_hostname and inventory_hostname
+    debug:
+      msg: "Hi my ansible_hostname is {{ansible_hostname}} and inventory_name is {{inventory_hostname}}"
+

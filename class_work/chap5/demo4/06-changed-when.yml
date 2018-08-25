@@ -1,0 +1,14 @@
+---
+- hosts: servera.lab.example.com
+  tasks:
+    - shell:
+        cmd: yum install -y mariadb-server
+      register: command_result
+      changed_when: "'Complete!' in command_result.stdout"
+      notify:
+        - restart_database
+  handlers:
+    - name: restart_database
+      service:
+        name: mariadb
+        state: restarted

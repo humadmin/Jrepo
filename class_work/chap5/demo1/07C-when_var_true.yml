@@ -1,0 +1,11 @@
+---
+# remove httpd from any one of the hosts before running this demo
+
+- hosts: servera.lab.example.com
+  vars:
+    run_my_task: true
+  tasks:
+  - name: httpd package is installed when the value is true
+    yum:
+      name: httpd
+    when: run_my_task

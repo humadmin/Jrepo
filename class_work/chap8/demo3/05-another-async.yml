@@ -1,0 +1,22 @@
+---
+- name: Play with a log running task
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Long task to run on a managed hosts.
+    shell: sleep 20 && touch /tmp/task1.done
+    async: 110
+    poll: 0
+    register: myresult
+    ignore_errors: yes
+  
+  - name: Waiting for task 1 completion.
+    wait_for: 
+      path: /tmp/task1.done
+   
+  - name: Task no. 2
+    shell: sleep 03 && touch /tmp/task2.done
+  
+  - name: Task no. 3
+    shell: sleep 03 && touch /tmp/task3.done
+  - debug:
+      var: myresult

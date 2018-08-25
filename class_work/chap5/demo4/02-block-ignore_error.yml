@@ -1,0 +1,26 @@
+---
+- name: Play to demo ingnore error of a block
+  hosts: servera.lab.example.com
+  tasks:
+  - block:
+    - name: Task1 which is expecting a good run
+      yum:
+        name: vsftpd
+        state: latest
+    - name: Task2 which is expecting a bad run
+      yum:
+        name: httpd-blah
+        state: latest
+    - name: Task3 which is expecting a good run
+      yum:
+        name: squid
+        state: latest
+    tags:
+      - hello
+    become: true
+    ignore_errors: yes
+  - block:
+    - name: Task from the next block
+      debug:
+        msg: "This is a task from the next block"
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<title> Welcome to my web page</title>
+</head>
+<body>
+<h1> My WEbpage</h1>
+This is generated from Jinga TEmpleate<br>
+IP Address of the system is  <b>{{ ansible_default_ipv4.address }}</b> and hostname is  <b>{{ ansible_fqdn }}</b>  <br>
+List of c*.conf from the /etc folder of  {{ ansible_fqdn }} is listed below
+<ul id='navigation'>
+{% for item in navigation %}
+<li> {{item}}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
+

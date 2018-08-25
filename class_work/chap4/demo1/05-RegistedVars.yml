@@ -1,0 +1,17 @@
+--- 
+# Starting line of playbook   CHANGE REMOVE_USER TO "ROOT" also and demonstrate
+- name: Registre Variable capturing
+  hosts: demo
+  #localhost
+  remote_user: root
+  tasks:
+    - name: Install a package and test registered variable
+      yum:
+        name: httpd
+        state: installed
+      register: instl_result 
+    - debug: var=instl_result
+    - name: store the resutl to a file
+      copy:
+        content: "{{instl_result}}" 
+        dest: /tmp/result

@@ -1,0 +1,27 @@
+# Run the playbook ignoring the tags 
+#   ansible-playbook 01-tags.yml 
+# Run the playbook tasks which are tagged prod  
+#   ansible-playbook --tags=prod 01-tags.yml 
+# Run the playbook tasks which are tagged prod and qa 
+#   ansible-playbook --tags=prod,qa 01-tags.yml 
+# Run the playbook skipping prod tasks
+#   ansible-playbook --skip-tags=prod 01-tags.yml 
+
+---
+- hosts: servera.lab.example.com
+  tasks:
+  - name: Task1
+    debug:
+      msg: "Generic task"
+  
+  - name: Task2
+    debug:
+      msg: "Prod task"
+    tags:
+    - prod
+
+  - name: Task3
+    debug:
+      msg: "QA task"
+    tags:
+      - qa

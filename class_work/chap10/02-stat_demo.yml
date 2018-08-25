@@ -1,0 +1,16 @@
+---
+- name: Play to demo state module
+  hosts: localhost
+  tasks:
+  - name: Task1
+    stat:
+      path: /tmp/motd1
+    register: stat_out
+  - debug:
+      var: stat_out
+
+  - assert:
+      that:
+        - stat_out.stat.exists
+  - name: Task2
+    command: "ls /tmp"

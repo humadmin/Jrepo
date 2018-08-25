@@ -1,0 +1,16 @@
+###  Just a simple loop structure. We define 3 users as system users and we use the with_items tag to cycle through it and create the user
+---
+- name: Testing user addition ....we create 3 users with 3 differnt password..This is List of Hashes
+  hosts: all
+  tasks:
+    - name: Create the users
+      user: 
+        name: "{{item.name}}"
+        state: present
+        password: "{{item.password}}"
+      with_items: 
+        - { name: 'admin', password: "{{'admin@123'|password_hash('sha512')}}"}
+        - { name: 'user1', password: "{{'user1@123'|password_hash('sha512')}}"}
+        - { name: 'bkuser', password: "{{'bkuser@123'|password_hash('sha512')}}"}
+      when: ansible_fqdn == "servera.lab.example.com"
+
