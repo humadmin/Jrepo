@@ -275,3 +275,5 @@ ls
 cd -
 git branch 
 git checkout git_devawx
+git commit -m "bash_history" .bash_history
+git checkout git_devawx
